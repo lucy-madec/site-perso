@@ -34,11 +34,12 @@ header {
     width: var(--sidebar-width);
     background-color: var(--nav-color);
     padding: 2rem 1rem;
-    transition: transform 0.3s ease-in-out;
-    position: sticky;
+    position: fixed; /* Changé de sticky à fixed */
     top: 0;
+    left: 0;
     height: 100vh;
     overflow-y: auto;
+    z-index: 1000;
 }
 
 #sidebar ul {
@@ -73,22 +74,23 @@ header {
 }
 
 .nav-toggle {
-    display: none;
+    display: none; /* Sera affiché uniquement en mobile */
     cursor: pointer;
     font-size: 1.5rem;
     position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    top: 1rem;
+    left: 1rem;
     background-color: var(--nav-color);
+    color: var(--text-color);
     padding: 0.5rem;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
     z-index: 1001;
 }
 
 main {
-    flex-grow: 1;
+    margin-left: var(--sidebar-width); /* Ajout de marge pour compenser la nav fixe */
     padding: 2rem;
+    width: calc(100% - var(--sidebar-width));
 }
 
 section {
@@ -128,11 +130,12 @@ footer {
     }
 
     .nav-toggle {
-        display: block;
+        display: block; /* Affiche la flèche en mobile */
     }
 
     main {
         margin-left: 0;
+        width: 100%;
     }
 
     #sidebar ul li a {
