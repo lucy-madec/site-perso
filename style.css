@@ -4,7 +4,7 @@
     --accent-color: #4a90e2;
     --secondary-color: #2c2c2c;
     --nav-color: #242424;
-    --sidebar-width: 200px;
+    --sidebar-width: 220px; /* Augmenté de 200px à 220px */
 }
 
 body {
@@ -33,7 +33,7 @@ header {
 #sidebar {
     width: var(--sidebar-width);
     background-color: var(--nav-color);
-    padding: 2rem 1rem;
+    padding: 2rem 0.5rem; /* Réduit le padding horizontal */
     transition: transform 0.3s ease-in-out;
     position: sticky;
     top: 0;
@@ -58,10 +58,13 @@ header {
 #sidebar ul li a {
     color: var(--text-color);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem; /* Ajusté le padding horizontal */
     border-radius: 25px;
     transition: background-color 0.3s;
     display: block;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    overflow: hidden; /* Cache le débordement de texte */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
 }
 
 #sidebar ul li a:hover,
@@ -129,5 +132,9 @@ footer {
 
     main {
         margin-left: 0;
+    }
+
+    #sidebar ul li a {
+        padding: 0.5rem 1rem; /* Rétablit le padding original pour mobile */
     }
 }
