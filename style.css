@@ -4,7 +4,7 @@
     --accent-color: #4a90e2;
     --secondary-color: #2c2c2c;
     --nav-color: #242424;
-    --sidebar-width: 250px; /* Augmenté pour accommoder les noms complets des liens */
+    --sidebar-width: 230px; /* Légèrement réduit */
 }
 
 body {
@@ -62,9 +62,9 @@ header {
     border-radius: 25px;
     transition: background-color 0.3s;
     display: block;
-    white-space: normal; /* Permet au texte de passer à la ligne si nécessaire */
-    overflow: hidden; /* Cache le débordement de texte */
-    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
+    white-space: nowrap; /* Empêche le texte d'aller à la ligne */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #sidebar ul li a:hover,
@@ -138,4 +138,12 @@ footer {
     #sidebar ul li a {
         padding: 0.5rem 1rem; /* Rétablit le padding original pour mobile */
     }
+}
+
+/* Styles pour les titres des sections */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
 }
