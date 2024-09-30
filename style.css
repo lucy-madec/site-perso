@@ -3,6 +3,7 @@
     --text-color: #ffffff;
     --accent-color: #4a90e2;
     --secondary-color: #2c2c2c;
+    --nav-color: #242424;
     --sidebar-width: 200px;
 }
 
@@ -31,9 +32,13 @@ header {
 
 #sidebar {
     width: var(--sidebar-width);
-    background-color: var(--secondary-color);
+    background-color: var(--nav-color);
     padding: 2rem 1rem;
     transition: transform 0.3s ease-in-out;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 #sidebar ul {
@@ -59,7 +64,8 @@ header {
     display: block;
 }
 
-#sidebar ul li a:hover {
+#sidebar ul li a:hover,
+#sidebar ul li a.active {
     background-color: var(--accent-color);
 }
 
