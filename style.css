@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 header {
@@ -89,6 +90,10 @@ header {
     z-index: 1001;
 }
 
+.nav-toggle i {
+    transition: transform 0.3s ease-in-out;
+}
+
 main {
     margin-left: var(--sidebar-width); /* Ajout de marge pour compenser la nav fixe */
     padding: 2rem;
@@ -124,6 +129,7 @@ footer {
         top: 0;
         height: 100%;
         transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
         z-index: 1000;
     }
 
@@ -138,10 +144,17 @@ footer {
     main {
         margin-left: 0;
         width: 100%;
+        padding: 1rem; /* Réduit le padding pour éviter le débordement */
     }
 
     #sidebar ul li a {
         padding: 0.5rem 1rem; /* Rétablit le padding original pour mobile */
+    }
+
+    .content-wrapper {
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
     }
 }
 

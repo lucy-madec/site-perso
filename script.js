@@ -6,16 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     navToggle.addEventListener('click', function() {
         sidebar.classList.toggle('active');
-        navToggle.querySelector('i').classList.toggle('fa-arrow-right');
-        navToggle.querySelector('i').classList.toggle('fa-arrow-left');
+        navToggle.querySelector('i').style.transform = sidebar.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
                 sidebar.classList.remove('active');
-                navToggle.querySelector('i').classList.add('fa-arrow-right');
-                navToggle.querySelector('i').classList.remove('fa-arrow-left');
+                navToggle.querySelector('i').style.transform = 'rotate(0)';
             }
         });
     });
