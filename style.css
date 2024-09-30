@@ -40,14 +40,16 @@ header {
     height: 100vh;
     overflow-y: auto;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement le contenu */
 }
 
 #sidebar ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0;
+    width: 100%;
 }
 
 #sidebar ul li {
